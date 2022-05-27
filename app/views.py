@@ -6,6 +6,10 @@ from flask import render_template
 def index():
     return render_template("/public/index.html")
 
+@app.route("/jinja")
+def jinja():
+    return render_template("/public/jinja.html")
+
 @app.route("/product")
 def products():
     return "<h1 style='color: red'>produtogtx2</h1>"
