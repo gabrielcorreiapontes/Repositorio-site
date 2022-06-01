@@ -1,0 +1,61 @@
+{   
+    "users":
+        [
+            {
+                "name": "josé",
+                "lastname": "azevedo",
+                "email": "ja@gmail.com",
+                "password": 3242341,
+                "postcodes": [51020260,5520434],
+                "products": ["product1","product2"]
+
+            },
+            {
+                "name": "Ana",
+                "lastname": "wth",
+                "email": "aw@gmail.com",
+                "password": 55555,
+                "postcodes": [12345,3456],
+                "products": ["product3","product4"]
+
+            }
+        ],
+        
+
+        
+        "products":
+        [
+            {
+                "name": "xbox",
+                "brand": "xbox",
+                "seller": "user1",
+                "price": 23.55,
+                "datetime": "[24/05/22",
+                "quality": "new",
+                "photos": ["fotoxbox1","fotoxbox2"]
+            },
+            {
+                "name": "ps5",
+                "brand": "sony",
+                "seller": "user2",
+                "price": 35.55,
+                "datetime": "[12/01/21",
+                "quality": "used",
+                "photos": ["fotops51","fotops52"]
+            }
+        ],
+
+
+
+        "orders":
+        [
+            {
+                "seller": "user1",
+                "buyer": "user2",
+                "buylist": ["xbox","ps5"],
+                "totalprice": 59.1,
+                "datetime": "[01/06/22",
+                "chat": " "
+            }
+        ]
+}
