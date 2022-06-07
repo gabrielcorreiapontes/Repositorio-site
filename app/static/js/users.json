@@ -7,8 +7,8 @@
                 "email": "ja@gmail.com",
                 "password": 3242341,
                 "postcodes": [51020260,5520434],
-                "products": ["product1","product2"]
-
+                "products": ["product1","product2"],
+                "orders": ["order1","ordedr2"]
             },
             {
                 "name": "Ana",
@@ -16,7 +16,8 @@
                 "email": "aw@gmail.com",
                 "password": 55555,
                 "postcodes": [12345,3456],
-                "products": ["product3","product4"]
+                "products": ["product3","product4"],
+                "orders": ["order1","ordedr2"]
 
             }
         ],

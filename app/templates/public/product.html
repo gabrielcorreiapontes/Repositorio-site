@@ -1,0 +1,25 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}Poducts{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Product {{ products["mouse razer krak"] }}</h1>
+            <hr>
+            product list
+            </h3>
+            <hr>
+            <ul>
+                {% for k, v in products.items() %}
+
+                <li>{{ k }}: {{ v }}</li>
+
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
