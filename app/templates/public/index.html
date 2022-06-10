@@ -16,18 +16,25 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/chat">Chat</a>
+            <a class="nav-link" href="/chat">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/chat">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/chat">Creat Account</a>
           </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categories
+              Profile
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/orders">orders</a></li>
-              <li><a class="dropdown-item" href="/categories">Ccategories</a></li>
+              <li><a class="dropdown-item" href="/orders">Orders</a></li>
+              <li><a class="dropdown-item" href="/categories">Products</a></li>
+              <li><a class="dropdown-item" href="/categories">Edit</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/produts">Products</a></li>
+              <li><a class="dropdown-item" href="/produts/">Sign out</a></li>
             </ul>
           </li>
         </ul>
@@ -56,14 +63,14 @@
 {% endblock %}
 
 
-{% block news %}
+{% block categories %}
 <div class="container">
     <div class="row">
-        <h1>news</h1>
+        <h1>Categpries</h1>
         <ul>
-            <li>news 1</li>
-            <li>news 2</li>
-            <li>news 3</li>
+            <li><a href="categorie/mouse">Mouse</a></li>
+            <li>Keyboard</li>
+            <li>Headset</li>
         </ul>
     </div>
 </div>
@@ -72,12 +79,23 @@
 {% block products %}
 <div class="container">
     <div class="row">
-        <h1>products</h1>
+        <h1>Products</h1>
         <ul>
-            <li>products 1</li>
-            <li>products 2</li>
-            <li>products 3</li>
+            <li><a href="product/teclado-novo">Teclado Novo</a></li>
+            <li>Mouse razer</li>
+            <li>Headset razer</li>
         </ul>
     </div>
+</div>
+{% endblock %}]
+
+{% block footer %}
+<div class="container">
+  <div class="row">
+      <h1>Nice Footer</h1>
+      <ul>
+          <li><a href="public/about">About</a></li>
+      </ul>
+  </div>
 </div>
 {% endblock %}

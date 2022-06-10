@@ -1,25 +1,40 @@
 {% extends "public/templates/public_template.html" %}
 
+{% import "macros/input_macros.html" as in %}
+
+<nav>{% block navbar %}{% endblock %}</nav>
+
 {% block title %}Poducts{% endblock %}
 
 {% block main %}
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Product {{ products["mouse razer krak"] }}</h1>
+            <h1>{{ products["mouse razer krak"]['name'] }}</h1>
             <hr>
             product list
             </h3>
             <hr>
             <ul>
-                {% for k, v in products.items() %}
+                {% for v in products["mouse razer krak"].values() %}
 
-                <li>{{ k }}: {{ v }}</li>
+                <li>{{ v }}</li>
 
                 {% endfor %}
             </ul>
 
+            {{ in.input(label="Your name", name="name", id="name", placeholder="Please enter your name") }}
+
+            {{ in.input(label="Age", type="number", id="age", placeholder="Please enter your age") }}
+
+            {{ in.input(label="Password", type="password", id="password", placeholder="Please enter a password") }}
+
         </div>
     </div>
 </div>
+<a href="/">Back home</a>
 {% endblock %}
+
+
+<!– "mouse razer krak" : { "name" : "mouse razer krak" , "categorie" : "categories[mouse]" , "seller" :
+    users["ana"], "price" : 57.87, "quality" : "new" , "postcodes" : 314235234, "description" : "new buy in eua" } –>
