@@ -1,0 +1,39 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}Categories{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Categore > {{ categories['mouse']['name'] }}</h1>
+            <h3>
+                products list
+            </h3>
+            <h4>
+                {{ categories['mouse']['name'] }}
+            </h4>
+            <hr>
+
+            <div>
+                <ul>
+                    {% for k in products.keys() %}
+
+                    <li>{{ products[k]["name"] }}</li>
+                    <li>{{ products[k]["categorie"] }}</li>
+                    <li>{{ products[k]["seller"]["name"] }}</li>
+                    <li>{{ products[k]["price"] }}</li>
+                    <li>{{ products[k]["quality"] }}</li>
+                    <li>{{ products[k]["descripition"] }}</li>
+                    <li>{{ products[k]["postcodes"] }}</li>
+                    <li>{{ "-----------------------------" }}</li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <a href="/">Back home</a>
+</div>
+{% endblock %}
