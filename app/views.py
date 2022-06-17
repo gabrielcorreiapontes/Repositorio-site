@@ -188,8 +188,14 @@ def sign_up():
 # < profile > acess a profile in app
 @app.route("/profile/<username>")
 def profile(username):
+
+    user = None
+
+    if username in users:
+        user = users[username]
+
     return render_template(
-    "/public/profile.html", products=products, categories=categories, users=users,
+    "/public/profile.html", products=products, categories=categories, username=username, user=user,
     orders=orders
     )
 
@@ -235,8 +241,4 @@ def order(ordername):
 # < about > the app 
 @app.route("/about")
 def about():
-    return "<h1 style='color: red'>SPP - Sell PC Parts</h1>"
-
-
-
-
+    return render_template("/public/about.html")
