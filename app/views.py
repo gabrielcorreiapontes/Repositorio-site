@@ -47,6 +47,7 @@ products = {
         "categorie": "categories[mouse]",
         "seller": users["ana"],
         "price": 57.87,
+        "quantity": 2,
         "quality": "new",
         "postcodes": 314235234,
         "description": "new buy in eua"
@@ -58,6 +59,7 @@ products = {
         "categorie": "categories[keyboard]",
         "seller": users["ana"],
         "price": 150,
+        "quantity": 1,
         "quality": "seminew",
         "postcodes": 314235234,
         "description": "very very good new"
@@ -68,6 +70,7 @@ products = {
         "categorie": "categories[keyboard]",
         "seller": users["josé"],
         "price": 100,
+        "quantity": 1,
         "quality": "seminew",
         "postcodes": 51020260,
         "description": "semi new but good word"
@@ -77,6 +80,7 @@ products = {
         "categorie": "categories[headset]",
         "seller": users["josé"],
         "price": 350,
+        "quantity": 4,
         "quality": "seminew",
         "postcodes": 51020260,
         "description": "semi new but good word like the teclado"
@@ -220,7 +224,7 @@ def product(productname):
 
 # < chat > acess profile in app
 @app.route("/profile/<username>/<chatname>")
-def chat(chatname):
+def chat(username,chatname):
         return render_template(
     "/public/chat.html", products=products, categories=categories, users=users,
     orders=orders,chats=chats
@@ -230,7 +234,7 @@ def chat(chatname):
 
 # < order > acess profile in app
 @app.route("/profile/<username>/<ordername>")
-def order(ordername):
+def order(username,ordername):
         return render_template(
     "/public/order.html", products=products, categories=categories, users=users,
     orders=orders,chats=chats
