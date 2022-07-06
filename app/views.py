@@ -1,5 +1,8 @@
 from collections import UserString
+
 from html.entities import name2codepoint
+
+from importlib_metadata import method_cache
 from app import app
 
 from flask import render_template, request, redirect
