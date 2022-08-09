@@ -1,11 +1,13 @@
 from collections import UserString
 
+
 from html.entities import name2codepoint
+from http.client import responses
 
 from importlib_metadata import method_cache
 from app import app
 
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, jsonify, make_response
 from datetime import datetime
 
 
@@ -249,3 +251,33 @@ def order(username,ordername):
 @app.route("/about")
 def about():
     return render_template("/public/about.html")
+
+
+@app.route("/json", methods=["GET", "POST"])
+def json():
+    
+    if request.is_json:
+        req = request.get_json()
+
+        response = {
+            "mensage": "JSON received!",
+            "name": req.get("name")
+        }
+
+        res = make_response(jsonify(response), 200)
+  
+        return res
+
+    else:
+        res = make_response(jsonify({"mensage": "JSON received!"}), 400)
+        return res
+    #return render_template("/public/json.html")
+
+
+@app.route("/guestbook")
+def guestbook():
+    return render_template("public/guestbook.html")
+
+@app.route("/guestbook/create-entry", methods=["POST"])
+def create_entry():
+    return "Thanks"
