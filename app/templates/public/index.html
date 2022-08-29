@@ -4,44 +4,176 @@
 
 
 {% block main %}
-<div class="container">
-    <div class="row">
-        <h1>Home</h1>
+<div class="container" id="banner">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="static/img/BannerSitePromoçãoAplicativo.png" class="d-block w-100" alt="foto carousel 1">
+            </div>
+            <div class="carousel-item">
+                <img src="static/img/Venhaconferirnossasnovidades!-Banner.png" class="d-block w-100"
+                    alt="foto carousel 2">
+            </div>
+            <div class="carousel-item">
+                <img src="static/img/BannerSiteVermelhoPromoçãoFreteGrátis.png" class="d-block w-100"
+                    alt="foto carousel 3">
+            </div>
+        </div>
     </div>
 </div>
-<hr>
+
 
 
 <div class="container">
-    <div class="row">
+    <div class="row" if="categories">
         <h1>Categories</h1>
-        <ul>
-            <li><a href="categorie/mouse">Mouse</a></li>
-            <li>Keyboard</li>
-            <li>Headset</li>
-        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="static/img/shoppingmouse.png" class="card-img-top" alt="Mouse">
+                <div class="card-body">
+                    <h5 class="card-title">Mouses</h5>
+                    <p class="card-text">New and uses mouses</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="static/img/shoppingmouse.png" class="card-img-top" alt="Mouse">
+                <div class="card-body">
+                    <h5 class="card-title">Mouses</h5>
+                    <p class="card-text">New and uses mouses</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="static/img/shoppingmouse.png" class="card-img-top" alt="Mouse">
+                <div class="card-body">
+                    <h5 class="card-title">Mouses</h5>
+                    <p class="card-text">New and uses mouses</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
-
+<div class="b-example-divider"></div>
 
 <div class="container">
     <div class="row">
         <h1>Products</h1>
-        <ul>
-            <li><a href="product/teclado-novo">Teclado Novo</a></li>
-            <li>Mouse razer</li>
-            <li>Headset razer</li>
-        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <a href="product/teclado-novo">
+                    <img src="static/img/shoppingteclado.png" class="card-img-top" alt="Teclado Novo">
+                </a>
+                    <div class="card-body">
+                    <h5 class="card-title">Teclado Novo</h5>
+                    <p class="card-text">Semi novo, usado por 2 meses, vendendo para arrecadar dinheiro.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Semi New/li>
+                    <li class="list-group-item">R$ 200,00</li>
+                    <li class="list-group-item">PIX</li>
+                </ul>
+                <div class="card-body">
+                    <a href="product/teclado-novo" class="card-link">Product link</a>
+                    <a href="product/teclado-novo" class="card-link">Add Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="static/img/shoppingmouse.png" class="card-img-top" alt="Mouse novo">
+                <div class="card-body">
+                    <h5 class="card-title">Mouse Novo</h5>
+                    <p class="card-text">COmpre agora esse mouse novo com descnto.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">New</li>
+                    <li class="list-group-item">R$ 300,00</li>
+                    <li class="list-group-item">Pix</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Product link</a>
+                    <a href="#" class="card-link">Add Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+<div class="b-example-divider"></div>
 
-
-<div class="container">
-  <div class="row">
-      <h1>Nice Footer</h1>
-      <ul>
-          <li><a href="/about">About</a></li>
-      </ul>
+<div class="container" id="footer">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-5 border-top">
+      <div class="col mb-3">
+        <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+            <img src="static/img/SSPnoback.png" alt="" width="40" height="32" class="bi me-2">
+        </a>
+        
+        <p class="text-muted">© 2022</p>
+      </div>
+  
+      <div class="col mb-3">
+  
+      </div>
+  
+      <div class="col mb-3">
+        <h5>Menu site</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Categoies</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Products</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sell</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+  
+      <div class="col mb-3">
+        <h5>Categoies</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mouse</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Keyboard</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">HD</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">SSD</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Motherboard</a></li>
+        </ul>
+      </div>
+  
+      <div class="col mb-3">
+        <h5>Products</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mouse Novo</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Teclado Novo</a></li>
+        </ul>
+      </div>
+    </footer>
   </div>
-</div>
 {% endblock %}

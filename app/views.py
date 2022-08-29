@@ -1,8 +1,14 @@
 from collections import UserString
+
+
 from html.entities import name2codepoint
+from http.client import responses
+
+from importlib_metadata import method_cache
 from app import app
 
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, jsonify, make_response
+
 from datetime import datetime
 
 
@@ -47,6 +53,7 @@ products = {
         "categorie": "categories[mouse]",
         "seller": users["ana"],
         "price": 57.87,
+        "quantity": 2,
         "quality": "new",
         "postcodes": 314235234,
         "description": "new buy in eua"
@@ -58,6 +65,7 @@ products = {
         "categorie": "categories[keyboard]",
         "seller": users["ana"],
         "price": 150,
+        "quantity": 1,
         "quality": "seminew",
         "postcodes": 314235234,
         "description": "very very good new"
@@ -68,6 +76,7 @@ products = {
         "categorie": "categories[keyboard]",
         "seller": users["josé"],
         "price": 100,
+        "quantity": 1,
         "quality": "seminew",
         "postcodes": 51020260,
         "description": "semi new but good word"
@@ -77,6 +86,7 @@ products = {
         "categorie": "categories[headset]",
         "seller": users["josé"],
         "price": 350,
+        "quantity": 4,
         "quality": "seminew",
         "postcodes": 51020260,
         "description": "semi new but good word like the teclado"
@@ -220,7 +230,7 @@ def product(productname):
 
 # < chat > acess profile in app
 @app.route("/profile/<username>/<chatname>")
-def chat(chatname):
+def chat(username,chatname):
         return render_template(
     "/public/chat.html", products=products, categories=categories, users=users,
     orders=orders,chats=chats
@@ -230,7 +240,7 @@ def chat(chatname):
 
 # < order > acess profile in app
 @app.route("/profile/<username>/<ordername>")
-def order(ordername):
+def order(username,ordername):
         return render_template(
     "/public/order.html", products=products, categories=categories, users=users,
     orders=orders,chats=chats
@@ -242,3 +252,39 @@ def order(ordername):
 @app.route("/about")
 def about():
     return render_template("/public/about.html")
+
+
+@app.route("/json", methods=["GET", "POST"])
+def json():
+    
+    if request.is_json:
+        req = request.get_json()
+
+        response = {
+            "mensage": "JSON received!",
+            "name": req.get("name")
+        }
+
+        res = make_response(jsonify(response), 200)
+  
+        return res
+
+    else:
+        res = make_response(jsonify({"mensage": "JSON received!"}), 400)
+        return "No JSON received", 400
+    #return render_template("/public/json.html")
+
+
+@app.route("/guestbook")
+def guestbook():
+    return render_template("public/guestbook.html")
+
+@app.route("/guestbook/create-entry", methods=["POST"])
+def create_entry():
+    req = request.get_json()
+
+    print(req)
+
+    res = make_response(jsonify(req), 200)
+
+    return res

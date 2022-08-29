@@ -1,3 +1,23 @@
 body {
-    background-color: rgb(146, 143, 145);
+    background-color: #EB7125;
 }
+
+#banner {
+    background-color: #e72020;
+    max-width: 100%;
+    flex-wrap: wrap;
+    padding-left: 0%;
+    padding-right: 0%;
+ }
+
+ #categories {
+    margin-top: 50px;
+ }
+
+ #footer {
+    background-color: #ede9e7;
+    max-width: 100%;
+    flex-wrap: wrap;
+    padding-left: 0%;
+    padding-right: 0%;
+ }
