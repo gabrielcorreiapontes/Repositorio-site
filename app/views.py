@@ -8,6 +8,7 @@ from importlib_metadata import method_cache
 from app import app
 
 from flask import render_template, request, redirect, jsonify, make_response
+
 from datetime import datetime
 
 
@@ -270,7 +271,7 @@ def json():
 
     else:
         res = make_response(jsonify({"mensage": "JSON received!"}), 400)
-        return res
+        return "No JSON received", 400
     #return render_template("/public/json.html")
 
 
@@ -280,4 +281,10 @@ def guestbook():
 
 @app.route("/guestbook/create-entry", methods=["POST"])
 def create_entry():
-    return "Thanks"
+    req = request.get_json()
+
+    print(req)
+
+    res = make_response(jsonify(req), 200)
+
+    return res
